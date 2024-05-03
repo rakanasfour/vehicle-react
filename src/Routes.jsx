@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "pages/NotFound";
+import AdminPage from "pages/AdminPage";
 
 const Error = React.lazy(() => import("pages/Error"));
 const ContactPage = React.lazy(() => import("pages/ContactPage"));
@@ -15,6 +16,7 @@ const ProjectRoutes = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="/finance" element={<Finance/>} />
           <Route path="/service" element={<ServiceDepartment/>} />
           <Route path="/aboutus" element={<AboutUs />} />

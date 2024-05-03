@@ -2,19 +2,15 @@ import React,{ useRef } from "react";
 
 import { Button,Input,Img} from "../../components";
 
-import ImageUpload from "../../components/ImageUpload"
+
 
 const AddVehicle = (props)=>{
 
-  function handleFileChange (event){
-    const selectedFile = event.target.files[0];
-    // Do something with the selected file, like uploading it to a server or processing it.
-    console.log('Selected file:', selectedFile);
-  };
+  
     const idInput= useRef();
     const imageInput= useRef();
     const typeInput= useRef();
-    const makeInput= useRef();
+    const brandInput= useRef();
     const modelInput= useRef();
     const yearInput= useRef();
     const priceInput= useRef();
@@ -28,7 +24,7 @@ const AddVehicle = (props)=>{
       const enteredId= idInput.current.value
       const enteredImage=imageInput.current.value
       const enteredType= typeInput.current.value
-      const enteredMake=makeInput.current.value
+      const enteredBrand=brandInput.current.value
       const enteredModel=modelInput.current.value
       const enteredYear=yearInput.current.value
       const enteredPrice=priceInput.current.value
@@ -43,7 +39,7 @@ const AddVehicle = (props)=>{
           id:enteredId,
           image:enteredImage,
           type:enteredType,
-          make:enteredMake,
+          brand:enteredBrand,
           model:enteredModel,
           year:enteredYear,
           price:enteredPrice,
@@ -67,7 +63,7 @@ const AddVehicle = (props)=>{
                     <div className="flex sm:flex-col flex-row gap-4 items-center justify-center w-full">
             
                       <Button className="bg-gray-300 cursor-pointer flex-1 font-bold py-3 rounded-[10px] text-center text-gray-900 text-lg w-full">
-                        Sell
+                        Add the vehicle in the table below
                       </Button>
                       
                     </div>
@@ -85,22 +81,37 @@ const AddVehicle = (props)=>{
                           
                         ></Input>
                         <Input
-                        id="make" ref={makeInput}
+                        id="brand" ref={brandInput}
                           name="textfieldlarge"
-                          placeholder="make"
+                          placeholder="brand"
+                          className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
+                          wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
+                       
+                        ></Input>
+                         <Input
+                         id="model" ref={modelInput}
+
+                          name="textfieldlarge"
+                          placeholder="Model"
                           className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
                           wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
                        
                         ></Input>
                          
-                        <Input
-                        id="type" ref={typeInput}
-                          name="textfieldlarge_One"
-                          placeholder="Vehicle Type"
-                          className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
-                          wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
-                          
-                        ></Input>
+
+                              <select
+                            id="type"
+                            ref={typeInput}
+                            name="textfieldlarge_One"
+                            className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
+                            style={{ backgroundColor: "white", border: "1px solid #cbd5e0", borderRadius: "10px", padding: "10px" }}
+                          >
+                            <option >Select Vehicle Type</option>
+                            <option value="SADAN">SADAN</option>
+                            <option value="SUV">SUV</option>
+                            <option value="TRUCK">TRUCK</option>
+                          </select>
+
                          <Input
                        id="year" ref={yearInput}
 
@@ -110,38 +121,33 @@ const AddVehicle = (props)=>{
                           wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
                        
                         ></Input>
-                          <Input
-                         id="model" ref={modelInput}
-
-                          name="textfieldlarge"
-                          placeholder="Model"
-                          className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
-                          wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
-                       
-                        ></Input>
+                         
                        
 
                         <Input
-                       id="image" ref={priceInput}
+                       id="price" ref={priceInput}
 
                           name="textfieldlarge_Two"
-                          placeholder="Price Range"
+                          placeholder="Price"
                           className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
                           wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
                           
                         ></Input>
 
-                        <Input type="file"
-                       id="image" ref={imageInput}
 
-                          name="textfieldlarge_Two"
+                        <Input
+                         id="image" ref={imageInput}
+
+                          name="textfieldlarge"
                           placeholder="image"
                           className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
-                          wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[.,10px] w-full"
-                          onChange={handleFileChange}
+                          wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
+                       
                         ></Input>
+                         
                       </div>
-                      <ImageUpload></ImageUpload>
+                    
+             
                       <Button onClick={submitHandler} className="bg-gray-900 cursor-pointer font-bold py-[17px] rounded-[10px] text-center text-lg text-white-A700 w-full">
                         Add new service
                       </Button>

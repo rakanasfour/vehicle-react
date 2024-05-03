@@ -1,10 +1,11 @@
 import React from "react";
 
 import { Img, Text } from "components";
+import { Link } from 'react-router-dom';
 
 const LandingPageFooter = (props) => {
   return (
-    <>
+    
       <footer className={props.className}>
         <div className="flex flex-col md:gap-10 gap-[120px] items-start justify-start w-full">
           <div className="flex md:flex-col flex-row md:gap-5 items-center justify-start w-full">
@@ -91,36 +92,34 @@ const LandingPageFooter = (props) => {
                   Features
                 </Text>
                 <div className="flex flex-col gap-3.5 items-start justify-start w-full">
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    Home v1
-                  </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    Home v2
-                  </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    About
-                  </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    Contact
-                  </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    Search
-                  </Text>
+                
+                <Link to="/" className="text-base text-gray-900">
+                <Text className="w-auto" size="txtManropeSemiBold16">
+                Home 
+              </Text>
+              </Link>
+        
+              
+                    <Link to="/service" className="text-base text-gray-900">
+                <Text className="w-auto" size="txtManropeSemiBold16">
+                Service 
+              </Text>
+              </Link>
+               
+                   <Link to="/finance" className="text-base text-gray-900">
+                <Text className="w-auto" size="txtManropeSemiBold16">
+                Finance Department 
+              </Text>
+              </Link>
+                  
+                
+              
+              
+                   <Link to="/contactpage" className="text-base text-gray-900">
+                <Text className="w-auto" size="txtManropeSemiBold16">
+                Contact US 
+              </Text>
+              </Link>
                 </div>
               </div>
               <div className="flex flex-1 flex-col gap-5 items-start justify-start w-full">
@@ -135,32 +134,16 @@ const LandingPageFooter = (props) => {
                     className="text-base text-gray-900 w-full"
                     size="txtManropeSemiBold16"
                   >
-                    Listing v1
+                    Vehicle History
                   </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    Listing v2
-                  </Text>
+
                   <Text
                     className="text-base text-gray-900 w-full"
                     size="txtManropeSemiBold16"
                   >
                     Vehicle Details
                   </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    <>other</>
-                  </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    other
-                  </Text>
+              
                 </div>
               </div>
               <div className="flex flex-1 flex-col gap-5 items-start justify-start w-full">
@@ -198,12 +181,7 @@ const LandingPageFooter = (props) => {
                 </div>
               </div>
               <div className="flex flex-1 flex-col gap-5 items-start justify-start w-full">
-                <Text
-                  className="text-gray-900 text-lg w-full"
-                  size="txtManropeBold18Gray900"
-                >
-                  Others
-                </Text>
+              
                 <div className="flex flex-col gap-3.5 items-start justify-start w-full">
                   <Text
                     className="text-base text-gray-900 w-full"
@@ -211,24 +189,9 @@ const LandingPageFooter = (props) => {
                   >
                     Log in
                   </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    Enter OTP
-                  </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    New Password
-                  </Text>
-                  <Text
-                    className="text-base text-gray-900 w-full"
-                    size="txtManropeSemiBold16"
-                  >
-                    Reset Password
-                  </Text>
+    
+    
+         
                   <Text
                     className="text-base text-gray-900 w-full"
                     size="txtManropeSemiBold16"
@@ -247,7 +210,7 @@ const LandingPageFooter = (props) => {
           </Text>
         </div>
       </footer>
-    </>
+   
   );
 };
 

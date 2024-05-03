@@ -43,6 +43,7 @@ const LandingPageHeader = (props) => {
                 Service 
               </Text>
             </Link>
+        
             <Link to="/finance" className="text-base text-gray-900">
          <Text className="w-auto" size="txtManropeSemiBold16">
                 Finance 
@@ -54,6 +55,13 @@ const LandingPageHeader = (props) => {
                 Contact us
               </Text>
             </Link>
+
+            <Link to="/admin" className="text-base text-gray-900">
+         <Text className="w-auto" size="txtManropeSemiBold16">
+                Admin 
+              </Text>
+            </Link>
+            
     
       
 

@@ -7,14 +7,14 @@ import { Button, CheckBox, Img, Input, List, Slider, Text } from "components";
 import LandingPageCard from "components/LandingPageCard";
 import LandingPageFooter from "components/LandingPageFooter";
 import LandingPageHeader from "components/LandingPageHeader";
-import AddVehicle from "components/AddVehicle";
+
 const LandingPagePage = () => {
    
 
 
   function Add(p){
     /* we add person.json */
-    fetch("http://a02ba74e09af4423bb9f1482cbdec986-691302344.us-east-2.elb.amazonaws.com:8082/api/addVehicle",
+    fetch("http://3.134.76.112:8081/api/addVehicle",
     /* we are describing the method is because we are posting */
     {
         method:"POST",
@@ -26,7 +26,7 @@ const LandingPagePage = () => {
     }
     ).then (()=>{
          /*If we clicked save it will take use to this page */
-        console.log("OMG it is wokring")
+        console.log("The vehicle has been added")
     })
 }
 
@@ -118,6 +118,7 @@ useEffect(() => {
               
                 
               </div>
+
               
               <div className="flex md:flex-1 flex-col items-center justify-start w-[47%] md:w-full">
                 <Img
@@ -131,7 +132,10 @@ useEffect(() => {
           </div>
         </div>
 
-        <AddVehicle onAdd={Add}></AddVehicle>
+
+        
+
+       
 
         <div className="flex flex-col font-manrope items-start justify-start md:px-10 sm:px-5 px-[120px] w-full">
           <div className="flex md:flex-col flex-row gap-6 items-center justify-center max-w-[1200px] mx-auto w-full">

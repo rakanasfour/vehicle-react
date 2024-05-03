@@ -40,7 +40,7 @@ const LandingPageCard = (props) => {
                     className="text-base text-gray-700 w-auto"
                     size="txtManropeSemiBold16Gray700"
                   >
-                    {props?.make}
+                    {props?.brand}
                   </Text>
                 </div>
               </div>
@@ -68,7 +68,7 @@ const LandingPageCard = (props) => {
             </div>
             <div className="flex flex-row gap-[31px] items-center justify-start w-full">
               <Button className="bg-gray-900 cursor-pointer flex-1 font-manrope font-semibold py-[13px] rounded-[10px] text-base text-center text-white-A700 w-full">
-                {props?.viewDetails}
+                BUY IT NOW
               </Button>
               <Text
                 className="flex-1 text-2xl md:text-[22px] text-gray-900 sm:text-xl tracking-[-0.48px] w-auto"

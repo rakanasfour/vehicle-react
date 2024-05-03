@@ -1,34 +1,26 @@
-
-# Stage 1: Build the application
-
-
-FROM node:16-alpine as build
-
-WORKDIR /app
-
-COPY package*.json .
-
-RUN npm install
-
-COPY . .
-
-
-RUN npm run build
-
-# Stage 2: Create a minimal runtime image
-
+# Use node 16 alpine as the base image
 FROM node:16-alpine
 
-
+# Set working directory
 WORKDIR /app
 
-COPY --from=build /app/build ./build
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-COPY --from=build /app/node_modules ./node_modules
+# Install dependencies
+RUN npm install
 
-# Uncomment the following line if you want to install only production dependencies
-# RUN npm install --only=production
+RUN npm install axios
+
+
+# Copy the entire application code
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# Expose port 3000
 EXPOSE 3000
 
-# Use ENTRYPOINT instead of CMD if you don't need to pass additional arguments to npm start
+# Run the application
 CMD ["npm", "start"]

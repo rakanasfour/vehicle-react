@@ -3,7 +3,7 @@ import React from "react";
 import { Button, Img, Text } from "components";
 
 
-const ServiceCard = (props) => {
+const FinanceCard = (props) => {
   return (
     <>
       <div className={props.className}>
@@ -22,17 +22,6 @@ const ServiceCard = (props) => {
             
   
 
-              <div className="flex flex-row gap-3 items-center justify-between w-full">
-              <h1 className=" text-base text-blue-700">Owner</h1>
-
-                  <Text
-                    className="flex-1 text-base text-gray-700 w-auto"
-                    size="txtManropeSemiBold16Gray700"
-                  >
-                    {props?.owner}
-                  </Text>
-               
-               </div>
 
                 <div className="flex flex-1 flex-row gap-3 items-center justify-start w-full">
                 <h1 className=" text-base text-blue-700">Brand</h1>
@@ -57,38 +46,38 @@ const ServiceCard = (props) => {
                 </div>
 
                 <div className="flex flex-1 flex-row gap-3 items-center justify-start w-full">
-                <h1 className=" text-base text-blue-700">Type</h1>
+                <h1 className=" text-base text-blue-700">Year</h1>
 
                   <Text
                     className="flex-1 text-base text-gray-700 w-auto"
                     size="txtManropeSemiBold16Gray700"
                   >
-                    {props?.type}
+                    {props?.year}
                   </Text>
                 </div>
 
                 <div className="flex flex-1 flex-row gap-3 items-center justify-start w-full">
-                <h1 className=" text-base text-blue-700">Cost</h1>
+                <h1 className=" text-base text-blue-700">Price</h1>
 
                   <Text
                     className="flex-1 text-base text-gray-700 w-auto"
                     size="txtManropeSemiBold16Gray700"
                   >
-                    {props?.cost}
+                    {props?.price}
                   </Text>
                 </div>
 
                 
 
                 <div className="flex flex-1 flex-row gap-3 items-center justify-start w-full">
-                <h1 className=" text-base text-blue-700">Date</h1>
+                <h1 className=" text-base text-blue-700">Add-on</h1>
 
                   <Text
                     className="flex-1 text-base text-gray-700 w-auto"
                     size="txtManropeSemiBold16Gray700"
                   >
 
-                    {props?.date}
+                    {props?.addon}
 
                   </Text>
 
@@ -108,4 +97,4 @@ const ServiceCard = (props) => {
       </div>
     </>
   );
-};export default ServiceCard;
+};export default FinanceCard;
